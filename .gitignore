@@ -1,0 +1,45 @@
+# Ignore bin and obj directories
+bin/
+obj/
+
+# Ignore build artifacts
+build/
+dist/
+
+# Ignore IDE and editor files
+.vscode/
+.idea/
+*.suo
+*.user
+*.sln.docstates
+
+# Ignore logs and temporary files
+*.log
+*.tmp
+
+# Ignore environment-specific files
+.env
+.env.local
+.env.*.local
+.env.development
+.env.test
+.env.production
+
+# Ignore dependency lock files
+package-lock.json
+yarn.lock
+
+# Ignore sensitive or personal files
+config.js
+secrets.json
+
+# Ignore NuGet packages
+*.nupkg
+
+# Ignore Visual Studio files
+
+
+# Ignore installed packages
+node_modules/
+
+
