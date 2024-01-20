@@ -14,7 +14,7 @@ namespace Core.Models
         public string Content {get; set;} = string.Empty;
         public DateTime CreatedAt = DateTime.Now;
         public virtual Post ?Post {get; set;}
-        public virtual User ?User {get; set;}
+        public virtual AppUser ?User {get; set;}
         
     }
 }

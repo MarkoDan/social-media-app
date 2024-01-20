@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using Core.Dtos;
 using Core.Interfaces;
 using Core.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -27,14 +28,37 @@ namespace API.Controllers
             return Ok(feed);
         }
 
+        // private int GetAuthenticatedUserId()
+        // {
+        //     if (!int.TryParse(User.FindFirstValue(ClaimTypes.NameIdentifier)), out int userId)
+        //     {
+        //         throw new Exception("Invalid user ID");
+        //     }
+
+        //     return userId;
+        // }
+
         private int GetAuthenticatedUserId()
         {
-            if (!int.TryParse(AppUser.FindFirstValue(ClaimTypes.NameIdentifier)), out int userId)
+            //Check if the user is authenticated
+            if (User.Identity.IsAuthenticated)
             {
-                throw new Exception("Invalid user ID");
-            }
+                // Assuming the user's ID is stored as NameIdentifier in the claims
+                var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
 
-            return userId;
+                if(userIdClaim != null && int.TryParse(userIdClaim.Value, out int userId))
+                {
+                    return userId;
+                }
+                else
+                {
+                    throw new Exception("User ID claim not found or is not valid integer");
+                }
+            }
+            else
+            {
+                throw new Exception("User is not authenticated");
+            }
         }
     }
 }
