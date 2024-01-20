@@ -1,0 +1,17 @@
+DTOs:
+
+UserDTOs
+UserRegistrationDto: Includes fields like Username, Email, Password.
+UserProfileDto: Includes fields like UserId, Username, Email, ProfileInfo.
+UserUpdateDto: Fields that can be updated, such as Email, ProfileInfo.
+PostDTOs
+PostCreationDto: Includes UserId, Content (text, images).
+PostDto: Includes PostId, UserId, Content, CreatedAt.
+PostUpdateDto: Fields that can be updated, such as Content.
+CommentDTOs
+CommentCreationDto: Includes UserId, PostId, Content.
+CommentDto: Includes CommentId, UserId, PostId, Content, CreatedAt.
+ReactionDTOs
+ReactionDto: Includes ReactionId, PostId, UserId, Type.
+FollowDTOs
+FollowDto: Includes FollowerId, FolloweeId.

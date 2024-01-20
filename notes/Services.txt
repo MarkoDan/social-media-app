@@ -1,0 +1,38 @@
+Services:
+
+1. UserService
+Handles all user-related operations.
+
+Register: Create a new user account.
+Authenticate: Verify user credentials and handle login/logout processes.
+GetUserProfile: Retrieve user profile information.
+UpdateUserProfile: Update user's personal information.
+DeleteUser: Remove a user account.
+2. PostService
+Manages all operations related to posts.
+
+CreatePost: Allow users to create a new post.
+GetPost: Retrieve a specific post by ID.
+GetAllPosts: List all posts, perhaps with filtering and sorting capabilities.
+UpdatePost: Edit an existing post.
+DeletePost: Remove a post.
+3. CommentService
+Handles comments on posts.
+
+AddComment: Post a comment on a specific post.
+DeleteComment: Remove a comment from a post.
+GetCommentsByPost: Retrieve all comments for a specific post.
+4. ReactionService
+Manages reactions (like, dislike) to posts.
+
+ReactToPost: Add a reaction to a post.
+RemoveReaction: Withdraw a reaction from a post.
+CountReactions: Count total reactions of each type for a specific post.
+5. FollowService
+Handles the following/follower system.
+
+FollowUser: Follow a specific user.
+UnfollowUser: Unfollow a user.
+GetFollowers: Retrieve list of followers for a user.
+GetFollowings: Retrieve list of users a user is following.
+IsFollowing: Check if a user is following another user.

@@ -1,0 +1,42 @@
+Repositories:
+
+1. UserRepository
+Methods for managing user data:
+
+CreateUser(User user): Adds a new user to the database.
+FindUserById(int userId): Retrieves a user by their unique identifier.
+UpdateUser(User user): Updates a user's profile information.
+DeleteUser(int userId): Removes a user from the database.
+FindUserByEmail(string email): Retrieves a user by their email address (useful in authentication).
+Additional methods might include searching for users, password reset functionality, or retrieving a list of friends/followers.
+2. PostRepository
+Methods for managing posts:
+
+CreatePost(Post post): Adds a new post.
+FindPostById(int postId): Retrieves a post by its ID.
+UpdatePost(Post post): Updates the content or details of a post.
+DeletePost(int postId): Removes a post.
+GetAllPosts(): Retrieves all posts, possibly with pagination.
+GetPostsByUserId(int userId): Retrieves all posts made by a specific user.
+3. CommentRepository
+Methods for managing comments:
+
+AddComment(Comment comment): Adds a new comment to a post.
+RemoveComment(int commentId): Deletes a comment.
+GetCommentsByPostId(int postId): Retrieves all comments for a specific post.
+UpdateComment(Comment comment): Updates the content of a comment.
+4. ReactionRepository
+Methods for managing reactions (like, dislike, etc.):
+
+AddReaction(Reaction reaction): Adds a reaction to a post.
+RemoveReaction(int reactionId): Removes a reaction.
+GetReactionsByPostId(int postId): Retrieves all reactions for a specific post.
+CountReactionsByType(int postId, string type): Counts the number of specific types of reactions a post has received.
+5. FollowRepository
+Methods for managing user relationships:
+
+FollowUser(int followerId, int followeeId): Establishes a follow relationship between two users.
+UnfollowUser(int followerId, int followeeId): Removes a follow relationship between two users.
+GetFollowers(int userId): Retrieves all followers of a user.
+GetFollowings(int userId): Retrieves all users that a given user is following.
+IsFollowing(int followerId, int followeeId): Checks if one user is following another.

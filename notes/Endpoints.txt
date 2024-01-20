@@ -1,0 +1,59 @@
+Endpoints:
+
+1. User Management:
+Register a New User
+
+POST /api/users — Create a new user account.
+Retrieve a User Profile
+
+GET /api/users/{userId} — Get a specific user's profile details.
+Update a User Profile
+
+PUT /api/users/{userId} — Update user profile details.
+Delete a User Account
+
+DELETE /api/users/{userId} — Remove a user account.
+2. Authentication:
+User Login
+
+POST /api/auth/login — Authenticate a user and return a token.
+User Logout
+
+POST /api/auth/logout — Invalidate user's session or token.
+3. Posts:
+Create a New Post
+
+POST /api/posts — Submit a new post.
+Retrieve All Posts
+
+GET /api/posts — Get a list of all posts.
+Retrieve a Single Post
+
+GET /api/posts/{postId} — Get details of a specific post.
+Update a Post
+
+PUT /api/posts/{postId} — Edit a particular post.
+Delete a Post
+
+DELETE /api/posts/{postId} — Remove a specific post.
+4. Comments:
+Comment on a Post
+
+POST /api/posts/{postId}/comments — Add a comment to a post.
+Delete a Comment
+
+DELETE /api/posts/{postId}/comments/{commentId} — Remove a specific comment.
+5. Reactions (Like/Dislike):
+React to a Post
+
+POST /api/posts/{postId}/reactions — Add a reaction to a post.
+Remove a Reaction
+
+DELETE /api/posts/{postId}/reactions/{reactionId} — Delete a reaction from a post.
+6. Friendship/Following:
+Follow a User
+
+POST /api/users/{userId}/follow — Start following a user.
+Unfollow a User
+
+DELETE /api/users/{userId}/unfollow — Stop following a user.

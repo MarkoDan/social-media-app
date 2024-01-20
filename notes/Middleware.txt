@@ -1,0 +1,47 @@
+Middleware:
+
+1. Authentication Middleware:
+Purpose: Ensures that the user is authenticated before allowing access to certain routes.
+Process:
+Extract the token from the Authorization header.
+Validate the token.
+If valid, extract user information and attach it to the request context.
+If invalid, return an unauthorized response.
+Endpoints Covered: Typically covers all endpoints except public ones like user registration and login.
+2. Authorization Middleware:
+Purpose: Ensures the user has the right permissions to perform certain actions.
+Process:
+Define roles and permissions in your system (e.g., admin, regular user).
+Check the user's role or permissions attached to the request context.
+Verify if the user is permitted to perform the requested action.
+If not permitted, return a forbidden response.
+Endpoints Covered: Any sensitive endpoint that requires specific user roles or permissions.
+3. Logging Middleware:
+Purpose: Logs incoming requests and outgoing responses for monitoring and debugging.
+Process:
+Log the incoming request path, method, and possibly body.
+Log the outgoing response status and possibly a summary of the content.
+Optionally include additional information like request duration, user ID, etc.
+Endpoints Covered: Typically covers all endpoints to provide a comprehensive log.
+4. Error Handling Middleware:
+Purpose: Catches and formats error responses uniformly.
+Process:
+Catch exceptions thrown from downstream middleware or handlers.
+Log the error details for internal use.
+Format a user-friendly error message and response, including status code.
+Ensure no sensitive error details are exposed to the client.
+Endpoints Covered: Typically covers all endpoints to ensure all errors are handled consistently.
+5. Rate Limiting Middleware:
+Purpose: Prevents abuse of the API by limiting the number of requests a user can make within a certain period.
+Process:
+Keep track of the number of requests from a user or IP address over a sliding window of time.
+If the request count exceeds the limit, return a rate limit exceeded response.
+Otherwise, allow the request to proceed.
+Endpoints Covered: Can cover all endpoints or just those that are particularly expensive or vulnerable to abuse.
+6. CORS Middleware:
+Purpose: Manages Cross-Origin Resource Sharing (CORS) settings to specify who can access the API.
+Process:
+Define allowed origins, headers, methods, and credentials.
+Check incoming requests against these settings.
+Include the appropriate CORS headers in the response.
+Endpoints Covered: Typically covers all endpoints to ensure CORS policy is enforced.

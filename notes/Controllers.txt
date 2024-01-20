@@ -1,0 +1,14 @@
+Controllers:
+
+Controllers handle incoming HTTP requests and send responses back to the client. They use services to perform business logic and operations.
+
+UserController
+Methods for register, login, retrieve user profile, update profile, and delete account.
+PostController
+Methods for creating, retrieving, updating, and deleting posts.
+CommentController
+Methods for adding and deleting comments on posts.
+ReactionController
+Methods for adding and removing reactions to posts.
+FollowController
+Methods for following and unfollowing users.

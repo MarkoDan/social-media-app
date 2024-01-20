@@ -1,0 +1,50 @@
+1. Users Table
+Stores information about each user.
+
+UserId (Primary Key): Unique identifier for each user.
+Username: User's chosen name.
+Email: User's email address.
+PasswordHash: Hashed password for authentication.
+ProfileInfo: Additional information like bio, profile picture URL, etc.
+CreatedAt: Timestamp of when the account was created.
+UpdatedAt: Timestamp of the last update to the account.
+2. Posts Table
+Stores the posts made by users.
+
+PostId (Primary Key): Unique identifier for each post.
+UserId (Foreign Key): Identifier of the user who created the post.
+Content: The content of the post (text, media URLs).
+CreatedAt: Timestamp of when the post was created.
+UpdatedAt: Timestamp of the last update to the post.
+
+3. Comments Table
+Stores comments on posts.
+
+CommentId (Primary Key): Unique identifier for each comment.
+PostId (Foreign Key): Identifier of the post on which the comment is made.
+UserId (Foreign Key): Identifier of the user who made the comment.
+Content: The text of the comment.
+CreatedAt: Timestamp of when the comment was made.
+
+4. Reactions Table
+Stores likes/dislikes or other reactions to posts.
+
+ReactionId (Primary Key): Unique identifier for each reaction.
+PostId (Foreign Key): Identifier of the post being reacted to.
+UserId (Foreign Key): Identifier of the user who reacted.
+Type: Type of reaction (like, dislike, etc.).
+CreatedAt: Timestamp of when the reaction was made.
+
+5. Follows Table
+Stores information about which users follow which other users.
+
+FollowId (Primary Key): Unique identifier for the follow record.
+FollowerId (Foreign Key): Identifier of the user who is following.
+FolloweeId (Foreign Key): Identifier of the user being followed.
+CreatedAt: Timestamp of when the follow action occurred.
+Relationships:
+One-to-Many: A user can have many posts, comments, reactions, and follow relationships. However, each post, comment, reaction, and follow relationship belongs to one user.
+Many-to-Many (for Follows): Users can follow many users, and can be followed by many users.
+
+
+

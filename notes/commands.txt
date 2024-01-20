@@ -1,0 +1,38 @@
+Install moq af Daniel
+
+Det er på Controller niveau da vi benytter vores interface til at Moq data til simulering af Repo Layer
+
+
+[Fact]
+public void test(){
+De 3 amigoes => AAA
+Arrange (oprette og lege med variabler mm)
+
+Act (Invoke the method)
+
+Assert (see if the expected result is the same as the given argument)
+
+}
+
+CMD => test om det er installeret
+angular
+typescript
+node og npm
+
+
+
+Commands:
+
+dotnet new sln
+dotnet new webapi -n API
+dotnet sln add API
+dotnet sln list
+
+
+migration command:
+
+    //dotnet ef migrations add InitialCreate -o Data/Migrations
+    //dotnet ef database update
+    dotnet ef database drop
+
+dotnet sln add ./Repository/Repository.csproj
